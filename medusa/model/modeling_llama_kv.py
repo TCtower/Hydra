@@ -865,7 +865,6 @@ class LlamaModel(LlamaPreTrainedModel):
         super().__init__(config)
         self.padding_idx = config.pad_token_id
         self.vocab_size = config.vocab_size
-
         self.embed_tokens = nn.Embedding(
             config.vocab_size, config.hidden_size, self.padding_idx
         )
@@ -873,7 +872,7 @@ class LlamaModel(LlamaPreTrainedModel):
             [LlamaDecoderLayer(config) for _ in range(config.num_hidden_layers)]
         )
         self.norm = LlamaRMSNorm(config.hidden_size, eps=config.rms_norm_eps)
-
+        
         self.gradient_checkpointing = False
         # Initialize weights and apply final processing
         self.post_init()
@@ -1002,6 +1001,11 @@ class LlamaModel(LlamaPreTrainedModel):
             inputs_embeds,
             past_key_values_length,
         )
+        
+        self.attention_mask = attention_mask
+        self.position_ids = position_ids
+        # print("attention_mask", attention_mask.size())
+        # print("position_ids", position_ids.size())
 
         hidden_states = inputs_embeds
 

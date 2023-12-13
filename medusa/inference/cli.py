@@ -37,7 +37,6 @@ def main(args):
         model = MedusaModel.from_pretrained(
             args.model,
             args.base_model,
-            medusa_num_heads = 4,
             torch_dtype=torch.float16,
             low_cpu_mem_usage=True,
             device_map="auto",
@@ -155,19 +154,51 @@ def main(args):
             conv.append_message(conv.roles[1], None)
             prompt = conv.get_prompt()
 
+            import time
             try:
+                start_time = time.time()
                 chatio.prompt_for_output(conv.roles[1])
                 input_ids = tokenizer.encode(prompt, return_tensors="pt").to(
                     model.base_model.device
                 )
+                from medusa.model.medusa_choices import mc_sim_7b_63, mc_sim_7b_63_depth3
+                
+                if model.medusa == 3:
+                    # 3 medusa heads
+                    medusa_choice = mc_sim_7b_63_depth3
+                else:
+                    # other medusa heads
+                    medusa_choice = mc_sim_7b_63
+                
                 outputs = chatio.stream_output(
                     model.medusa_generate(
                         input_ids,
                         temperature=args.temperature,
                         max_steps=args.max_steps,
+                        medusa_choices=medusa_choice
                     )
                 )
                 conv.update_last_message(outputs.strip())
+
+                # Stop timing after generation
+                end_time = time.time()
+
+                # Calculate time taken in seconds and convert to milliseconds
+                time_taken_seconds = end_time - start_time
+                time_taken_milliseconds = time_taken_seconds * 1000  # Convert to milliseconds
+
+                # Calculate tokens generated and tokens per second
+                tokens_generated = len(outputs.strip().split())
+                tokens_per_second = tokens_generated / time_taken_seconds if time_taken_seconds > 0 else float('inf')
+
+                # Print the metrics in milliseconds and tokens per second
+                print("\n=========================================")
+                print('Speed Metrics:')
+                print("-----------------------------------------")
+                print(f"Response Time: {time_taken_seconds:.3f} sec")
+                print(f"Tokens per Second: {tokens_per_second:.2f} tps")
+                print("=========================================\n")
+
 
             except KeyboardInterrupt:
                 print("stopped generation.")

@@ -36,6 +36,8 @@ from torch.nn import CrossEntropyLoss
 from torch.nn import functional as F
 import os
 from medusa.model.medusa_model import MedusaModel, MedusaConfig
+from medusa.model.modeling_llama_kv import LlamaForCausalLM as KVLlamaForCausalLM, LlamaDecoderLayer, LlamaRMSNorm, _make_causal_mask, _expand_mask
+
 
 IGNORE_TOKEN_ID = LabelSmoother.ignore_index
 
@@ -133,6 +135,10 @@ class TrainingArguments(transformers.TrainingArguments):
     medusa_num_layers: int = field(
         default=1,
         metadata={"help": "Number of layers for each Medusa head."},
+    )
+    medusa_num_decoder_layers: int = field(
+        default=1,
+        metadata={"help": "Number of decoding layers for Hydra."},
     )
 
 
@@ -372,7 +378,18 @@ def train():
     )
 
     # Load model and tokenizer
-    model = transformers.AutoModelForCausalLM.from_pretrained(
+    # model = transformers.AutoModelForCausalLM.from_pretrained(
+    #     model_args.model_name_or_path,
+    #     config=config,
+    #     cache_dir=training_args.cache_dir,
+    #     low_cpu_mem_usage=True,
+    #     torch_dtype=torch.bfloat16,
+    #     quantization_config=quantization_config if model_args.load_in_4bit else None,
+    #     load_in_4bit=model_args.load_in_4bit,
+    #     load_in_8bit=model_args.load_in_8bit,
+    # )
+    
+    model = KVLlamaForCausalLM.from_pretrained(
         model_args.model_name_or_path,
         config=config,
         cache_dir=training_args.cache_dir,
@@ -391,10 +408,12 @@ def train():
     medusa_lm_head = MedusaModel(
         model,
         medusa_num_heads=training_args.medusa_num_heads,
+        medusa_num_decoder_layers=training_args.medusa_num_decoder_layers,
         medusa_num_layers=training_args.medusa_num_layers,
         base_model_name_or_path=model_args.model_name_or_path,
     )
 
+    
     # Format output dir
     training_args.output_dir = f"{training_args.output_dir}_medusa_mlp_{model_args.model_name_or_path.split('/')[-1]}_medusa_{training_args.medusa_num_heads}_lr_{training_args.learning_rate}_layers_{training_args.medusa_num_layers}"
 
@@ -413,6 +432,7 @@ def train():
     # Generate Medusa config for pushing to HF hub
     medusa_config = MedusaConfig(
         medusa_num_heads=training_args.medusa_num_heads,
+        medusa_num_decoder_layers=training_args.medusa_num_decoder_layers,
         medusa_num_layers=training_args.medusa_num_layers,
         base_model_name_or_path=model_args.model_name_or_path,
     )
@@ -431,17 +451,20 @@ def train():
     else:
         trainer.train()
     model.config.use_cache = True
+
     # trainer.save_state()
     # safe_save_model_for_hf_trainer(trainer=trainer, output_dir=training_args.output_dir)
-    # Save MedusaHead seperately
-    if hasattr(medusa_lm_head, "module"):
-        lm_head = medusa_lm_head.module.medusa_head
-    else:
-        lm_head = medusa_lm_head.medusa_head
+    
+    # Save hydra only
+    hydra_model = {}
+    hydra_model["medusa_head"] = medusa_lm_head.medusa_head
+    hydra_model["medusa_rms_norm"] = medusa_lm_head.medusa_rms_norm
+    hydra_model["medusa_decoder_layers"] = medusa_lm_head.medusa_decoder_layers
+    
 
     # Save Medusa heads
     torch.save(
-        lm_head.state_dict(),
+        hydra_model,
         os.path.join(training_args.output_dir, "medusa_lm_head.pt"),
     )
 
