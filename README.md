@@ -18,7 +18,7 @@ Hydra is an LLM generation framework that aims to improve the multi-head decodin
 
 ## Requirements & Installation
 
-**Recommended requirements:** 
+### Recommended requirements 
 - python==3.10
 - pytorch==1.13.0
 - transformers==4.35.2
@@ -29,11 +29,13 @@ Hydra is an LLM generation framework that aims to improve the multi-head decodin
 
 The requirements can best be fulfilled by installing pytorch via anaconda. You can install PyTorch by following the ["Get Started"](https://pytorch.org/get-started/locally/) instructions on the official website. 
 
-**Hardware requirements:** NVIDIA Turing (RTX 20xx; T4) or Ampere GPU (RTX 30xx; A4-A100); (a GPU from 2018 or older).
+### Hardware requirements
+NVIDIA Turing (RTX 20xx; T4) or Ampere GPU (RTX 30xx; A4-A100); (a GPU from 2018 or older).
 
 (Make sure you make enough GPU memory!!!)
 
-**Installation:** Compile Hydra from source
+### Installation 
+Compile Hydra from source
 ```bash
 git clone https://github.com/FasterDecoding/Medusa.git
 cd Medusa
@@ -41,7 +43,7 @@ pip install -e .
 ```
 
 ## Model Weights
-We uploaded three model weights for users to try.
+We uploaded three model weights to Hugging Face for users to try.
 
 | Base Model | Description | Hugging Face Repo |
 | --- | ----------- | --- |
@@ -69,7 +71,7 @@ For training, please install:
 ```bash
 pip install -e ".[train]"
 ```
-#### Prepare the data
+### Prepare the data
 We take a public version of the ShareGPT dataset, which is a subset of the Vicuna training data. For other models, you can use the corresponding training dataset.
 ```bash
 git clone https://huggingface.co/datasets/Aeala/ShareGPT_Vicuna_unfiltered
@@ -78,7 +80,7 @@ Remark: If you haven't installed `git-lfs`, please install it before cloning:
 ```bash
 git lfs install
 ```
-#### Train the model
+### Train the model
 The training setup follows [FastChat](https://github.com/lm-sys/FastChat#fine-tuning), but with a much larger learning rate because we freeze the original model and only train the new decoders and heads. Here is the training command for the Vicuna-7b model on 1 NVIDIA A40 GPU. You can modify the script to fit your own setup. For larger models, we use the same setup. You can also use `--load_in_8bit` or `--load_in_4bit` to load the base model in quantized format.
 ```bash
 torchrun --nproc_per_node=1 medusa/train/train.py --model_name_or_path lmsys/vicuna-7b-v1.3 \
