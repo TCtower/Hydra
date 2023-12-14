@@ -1,0 +1,42 @@
+[
+    { 
+        "prompt": "Which famous landmarks should I visit in London, beyond the usual ones?", 
+        "gt": null
+    },
+    { 
+        "prompt": "What are the rules and restrictions in place for COVID-19 in the city?", 
+        "gt": null
+    },
+    { 
+        "prompt": "How did the Spanish conquest of the Low Countries in the 16th century impact European politics and culture?", 
+        "gt": null
+    },
+    { 
+        "prompt": "Identify the most significant advancements in material science in recent years", 
+        "gt": null
+    },
+    { 
+        "prompt": "Write a satire about the struggles of working in customer service.", 
+        "gt": null
+    },
+    { 
+        "prompt": "Which type of rock is commonly used for construction and why?", 
+        "gt": null
+    },
+    { 
+        "prompt": "Write a 10-line romantic poem using imagery and metaphors that celebrates the serenity and majesty of nature. Use a rhyme scheme of your choice and incorporate at least one literary device, such as alliteration or repetition. Bonus points for including a personal anecdote or memory related to being surrounded by natural beauty.", 
+        "gt": null
+    },
+    { 
+        "prompt": "Write a story about a person who quits their job to pursue their dream career.", 
+        "gt": null
+    },
+    { 
+        "prompt": "What is the best type of meditation for reducing stress?", 
+        "gt": null
+    },
+    { 
+        "prompt": "Write instructions for making scallops in butter sauce.", 
+        "gt": null
+    }
+]

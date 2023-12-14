@@ -1,0 +1,48 @@
+[
+    { 
+        "prompt": "Translate the following text to French: One night, after he had made up his mind in regard to the murder, and as Therese was drinking a glass of sugar and water before him, Laurent remembered that he had seen in this laboratory a small stoneware flagon, containing prussic acid, and that the young dispenser had spoken to him of the terrible effects of this poison, which strikes the victim down with sudden death, leaving but few traces behind. And Laurent said to himself, that this was the poison he required.", 
+        "gt": "Un soir, lorsqu'il se fut décidé au meurtre, Laurent, comme Thérèse buvait devant lui un verre d'eau sucrée, se souvint d'avoir vu dans ce laboratoire un petit flacon de grès, contenant de l'acide prussique. En se rappelant ce que lui avait dit le jeune préparateur sur les effets terribles de ce poison qui foudroie et laisse peu de traces, il songea que c'était là le poison qu'il lui fallait."
+    },
+    { 
+        "prompt": "Translate the following text to French: Then, when he returned home, when he saw Madame Raquin and Therese again, his weariness brought on frightful fits of terror. And he vowed he would leave the house no more, that he would put up with his suffering, so as to become accustomed to it, and be able to conquer it.", 
+        "gt": "Puis, quand il rentrait, quand il revoyait Mme Raquin et Thérèse, sa lassitude le livrait à des crises affreuses de terreur; il jurait alors de ne plus sortir, de rester dans sa souffrance pour s'y habituer et la vaincre."
+    },
+    { 
+        "prompt": "Translate the following text to French: When at table—at no matter what moment, in the middle of a quarrel or of a long silence—he happened, all at once, to look round, and perceive Francois examining him with a harsh, implacable stare, he turned pale and lost his head. He was on the point of saying to the cat: \"Heh! Why don't you speak? Tell me what it is you want with me.\" When he could crush his paw or tail, he did so in affrighted joy, the mewing of the poor creature giving him vague terror, as though he heard a human cry of pain.", 
+        "gt": "Lorsqu'à table, à n'importe quel moment, au milieu d'une querelle ou d'un long silence, il venait tout à coup, en tournant la tête, à apercevoir les regards de François qui l'examinait d'un air lourd et implacable, il pâlissait, il perdait la tête, il était sur le point de crier au chat: « Hé! parle donc, dis-moi au moins ce que tu me veux. » Quand il pouvait lui écraser une patte ou la queue, il le faisait avec une joie effrayée, et alors le miaulement de la pauvre bête le remplissait d'une vague terreur, comme s'il eût entendu le cri de douleur d'une personne."
+    },
+    	
+    { 
+        "prompt": "Translate the following text to French: Laurent, in fact, was afraid of Francois, particularly since the latter passed his time on the knees of the impotent old lady, as if in the centre of an impregnable fortress, whence he could with impunity set his eyes on his enemy.", 
+        "gt": "Laurent, à la lettre, avait peur de François. Depuis surtout que ce dernier vivait sur les genoux de l'impotente, comme au sein d'une forteresse inexpugnable, d'où il pouvait impunément braquer ses yeux verts sur son ennemi, le meurtrier de Camille établissait une vague ressemblance entre cette bête irritée et la paralytique."
+    },
+    	
+    { 
+        "prompt": "Translate the following text to French: Laurent waited fully half an hour. He knew that his wife always went by the Rue Mazarine; nevertheless, at one moment, he remembered that she might escape him by taking the Rue de Seine, and he thought of returning to the arcade, and concealing himself in the corridor of the house.", 
+        "gt": "Laurent attendit une grande demi-heure, il savait que sa femme s'en allait toujours par la rue Mazarine; un moment, pourtant, il craignit qu'elle ne lui eût échappé en prenant la rue de Seine." 
+    },
+    	
+    { 
+        "prompt": "Translate the following text to French: This excursion proved perfect agony. While his wife basked in the sun on the pavement, trailing her skirt with nonchalance and impudence, shameless and unconcerned, he followed behind her, pale and shuddering, repeating that it was all over, that he would be unable to save himself and would be guillotined.", 
+        "gt": "Cette course fut pour lui une véritable agonie; tandis que sa femme s'étalait au soleil sur le trottoir, traînant ses jupes, nonchalante et impudique, il venait derrière elle, pâle et frémissant, se répétant que tout était fini, qu'il ne pourrait se sauver et qu'on le guillotinerait."
+    },
+    	
+    { 
+        "prompt": "Translate the following text to French: He also would have liked to repent, or at least to have performed the comedy of repentance, to see what effect it would have. Unable to find the sobs and necessary words, he flung himself into violence again, stirring up Therese so as to irritate her and lead her back with him to furious madness.", 
+        "gt": "Il aurait voulu se repentir, lui aussi, jouer tout au moins la comédie du remords, pour essayer; mais il ne pouvait trouver les sanglots et les mots nécessaires, il se rejetait dans la violence, il secouait Thérèse pour l'irriter et la ramener avec lui dans la folie furieuse." 
+    },
+    { 
+        "prompt": "Translate the following text to French: The murderer being ceaselessly thrust, so to say, against the man he had killed, ended by experiencing a strange sensation that very nearly drove him out of his mind. By being so constantly compared to Camille, by making use of the different articles Camille had used, he imagined he was Camille himself, that he was identical with his victim.", 
+        "gt": "Sans cesse heurté contre l'homme qu'il avait tué, le meurtrier finit par éprouver une sensation bizarre qui faillit le rendre fou; il s'imagina, à force d'être comparé à Camille, de se servir des objets dont Camille s'était servi, qu'il était Camille, qu'il s'identifiait avec sa victime." 
+    },
+    { 
+        "prompt": "Translate the following text to French: Then, amidst the enervation of their crime, their love had turned to fright, and their kisses had produced a sort of physical terror. At present, amid the suffering which marriage, which life in common imposed on them, they revolted and flew into anger.", 
+        "gt": "Ils s'étaient aimés comme des brutes, avec une passion chaude, toute de sang; puis, au milieu des événements du crime, leur amour était devenu de la peur, et ils avaient éprouvé une sorte d'effroi physique de leurs baisers; aujourd'hui, sous la souffrance que le mariage, que la vie en commun leur imposait, ils se révoltaient et s'emportaient."
+    },
+    	
+    { 
+        "prompt": "Translate the following text to French: And yet, in the fits of rage that bestirred them, they both saw clearly to the bottom of their anger, they were aware it was the furious impulse of their egotistic nature that had urged them to murder in order to satisfy their desire, and that they had only found in assassination, an afflicted and intolerable existence.", 
+        "gt": "Et pourtant, dans les crises d'emportement qui les secouaient, ils lisaient chacun nettement au fond de leur colère, ils devinaient les fureurs de leur être égoïste qui les avaient poussés à l'assassinat pour contenter ses appétits, et qui ne trouvait dans l'assassinat qu'une existence désolée et intolérable." 
+    }
+
+]

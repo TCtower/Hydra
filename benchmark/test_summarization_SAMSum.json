@@ -1,0 +1,42 @@
+[
+    { 
+        "prompt": "summarize the following dialogue with these 4 requirements (1) be rather short, (2) extract important pieces of information, (3) include names of interlocutors, (4) be written in the third person: Olivia: Who are you voting for in this election? Oliver: Liberals as always. Olivia: Me too!! Oliver: Great", 
+        "gt": "Olivia and Olivier are voting for liberals in this election."
+    },
+    { 
+        "prompt": "summarize the following dialogue with these 4 requirements (1) be rather short, (2) extract important pieces of information, (3) include names of interlocutors, (4) be written in the third person: Anita: I'm at the station in Bologna Jenny: No problems so far? Anita: no, everything's going smoothly Tomy: good!", 
+        "gt": "Anita is at Bologna station."
+    },
+    { 
+        "prompt": "summarize the following dialogue with these 4 requirements (1) be rather short, (2) extract important pieces of information, (3) include names of interlocutors, (4) be written in the third person: Laura: ok , I'm done for today-) Laura: let me know once u're free and we come back home together Kim: hmm.. 7? Laura: ok Kim: cool, wait for me at work, I'll call once I get here", 
+        "gt": "Laura will pick up Kim from work around 7, and they will come back home together."
+    },
+    { 
+        "prompt": "summarize the following dialogue with these 4 requirements (1) be rather short, (2) extract important pieces of information, (3) include names of interlocutors, (4) be written in the third person: Anna: where are you Omenah: at home Anna: I will be there in a minute", 
+        "gt": "Omenah is at home, Anna will be there in a minute."
+    },
+    { 
+        "prompt": "summarize the following dialogue with these 4 requirements (1) be rather short, (2) extract important pieces of information, (3) include names of interlocutors, (4) be written in the third person: Ted: Feeling sorry for.. myself! Kelly: What’s happened? Are you ok? Ted: I’ve twisted my ankle Mike: what have you done? Victoria: bless you! x Oliver: too much to drink? Rob: all the best! Kelly: get well soon! Mary: oh dear! xxx Ted: cheers guys!", 
+        "gt": "Ted has twisted his ankle."
+    },
+    { 
+        "prompt": "summarize the following dialogue with these 4 requirements (1) be rather short, (2) extract important pieces of information, (3) include names of interlocutors, (4) be written in the third person: Sam: I just got my 1st credit card! Tom: Well, congrats and sorry! Sam: Y sry? Tom: Aren't u afraid of getting into debts? Sam: No, not really. Should I be? Tom: I think u should.", 
+        "gt": "Sam got her first credit card."
+    },
+    { 
+        "prompt": "summarize the following dialogue with these 4 requirements (1) be rather short, (2) extract important pieces of information, (3) include names of interlocutors, (4) be written in the third person: Maria: Guys, don't bring anything, I've cooked so much Andrew: We will bring some wine we bought in Italy last year Martha: Especially for a night like this Maria: How nice of you!! thanks", 
+        "gt": "Maria has cooked a lot of food. Andrew will bring some Italian wine."
+    },
+    { 
+        "prompt": "summarize the following dialogue with these 4 requirements (1) be rather short, (2) extract important pieces of information, (3) include names of interlocutors, (4) be written in the third person: Yannick: I heard you are going to sing the anthem Yannick: At the game Nicki: Yes I am Nicki: I am nervous! Yannick: Dont be Yannick: It's a huge privilege to sing the anthem in front of thousands of people! Nicki: I hoep I won't forget the lyrics Nicki: hope* Yannick: Youre a great singer Yannick: You will be fine Nicki: I have to rehearse Yannick: Your parents coming with you? Nicki: Yes Yannick: They're probably proud of you good luck! Nicki: Thank you Yannick", 
+        "gt": "Nicki is going to sing the anthem at the game."
+    },
+    { 
+        "prompt": "summarize the following dialogue with these 4 requirements (1) be rather short, (2) extract important pieces of information, (3) include names of interlocutors, (4) be written in the third person: Frank: Hi Peter has brought me to Sports Direct store at the top of Rosie: Ok thanks will look out for you there Frank: We are on the ground floor Rosie: ok Frank: Outside Morrisons Rosie: On my way Frank: We might be upstairs later so look there too Rosie: ok I will - see you soon xxx", 
+        "gt": "Rosie is on her way to meet Frank and will have to find him at Sports Direct."
+    },
+    { 
+        "prompt": "summarize the following dialogue with these 4 requirements (1) be rather short, (2) extract important pieces of information, (3) include names of interlocutors, (4) be written in the third person: Joshua: look out the window Noah: what's there? XD Joshua: do it :P Noah: oh wow Noah: so much snow :D when did this happen lol Joshua: :D Noah: it's definitely time to build a snowman! Joshua: build an Olaf :d Noah: ofc i will, he's my idol! Joshua: XD", 
+        "gt": "It's snowing outside."
+    }
+]
